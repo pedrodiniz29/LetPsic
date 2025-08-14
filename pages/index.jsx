@@ -15,7 +15,13 @@ function Home() {
           minHeight: "100dvh",
         }}
       >
-        <div style={{ alignContent: "center", paddingRight: "50px" }}>
+        <div
+          style={{
+            alignContent: "center",
+            paddingRight: "3vw",
+            maxWidth: "45vw",
+          }}
+        >
           <h1>Em breve,</h1>
           <h2>Um novo espaço para cuidar de você.</h2>
         </div>
@@ -24,7 +30,7 @@ function Home() {
         />
         <img
           src="https://psicologaleticiapratesnovak.my.canva.site/portifolio/_assets/media/26f878289b10eac637ddb49012610a62.png"
-          style={{ width: 400 }}
+          style={{ width: "30vw" }}
         />
       </div>
     </div>
