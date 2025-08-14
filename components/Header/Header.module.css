@@ -1,5 +1,5 @@
 .header {
-  background-color: rgb(5, 100, 175);
+  background-color: #678c99;
   padding: 23px 25px;
   display: flex;
   align-items: center;
@@ -7,14 +7,10 @@
   text-align: center;
   color: white;
   height: 20px;
-  font-family: Helvetica, Arial, sans-serif;
-  border-bottom: 3px solid;
-  border-color: #ec7607;
-  border-width: 3px;
 }
 
 .header img {
-  width: 105px;
+  width: 32px;
   height: 32px;
 }
 .header h1 {
