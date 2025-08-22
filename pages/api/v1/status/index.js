@@ -3,6 +3,7 @@ import database from "infra/database.js";
 async function status(request, response) {
   const updatedAt = new Date().toISOString();
   const postgresVersion = await database.query("SHOW server_version;");
+  console.log(process.env.POSTGRES_DB);
   const dbActiveConnections = await database.query(
     "SELECT COUNT(*)::int FROM pg_stat_activity WHERE datname=$1;",
     [process.env.POSTGRES_DB],
