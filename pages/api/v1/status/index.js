@@ -4,7 +4,7 @@ async function status(request, response) {
   const updatedAt = new Date().toISOString();
   const postgresVersion = await database.query("SHOW server_version;");
   const dbActiveConnections = await database.query(
-    `SELECT COUNT(*)::int FROM pg_stat_activity WHERE datname='$1;`,
+    `SELECT COUNT(*)::int FROM pg_stat_activity WHERE datname='$1';`,
     [process.env.POSTGRES_DB],
   );
   const dbMaxConnections = await database.query("SHOW max_connections;");
