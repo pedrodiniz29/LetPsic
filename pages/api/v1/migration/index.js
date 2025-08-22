@@ -38,6 +38,7 @@ export default async function migration(request, response) {
 
     default:
       console.log("Entrou no DEFAULT");
+      console.log(dbClient);
       return response.status(405).end();
   }
 }
