@@ -19,7 +19,6 @@ export default async function migration(request, response) {
   console.log(method);
   switch (method) {
     case "POST":
-      console.log("Entrou no POST");
       const migrations_post = await migrationRunner({
         ...migrationsObject,
         dryRun: false,
@@ -31,7 +30,6 @@ export default async function migration(request, response) {
       return response.status(200).json(migrations_post);
 
     case "GET":
-      console.log("Entrou no GET");
       const migrations_get = await migrationRunner(migrationsObject);
       await dbClient.end();
       return response.status(200).json(migrations_get);
