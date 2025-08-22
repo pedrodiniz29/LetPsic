@@ -23,6 +23,7 @@ export default async function migration(request, response) {
         ...migrationsObject,
         dryRun: false,
       });
+      console.log("POST");
       await dbClient.end();
       if (migrations_post.length > 0) {
         return response.status(201).json(migrations_post);
@@ -31,6 +32,7 @@ export default async function migration(request, response) {
 
     case "GET":
       const migrations_get = await migrationRunner(migrationsObject);
+      console.log("GET");
       await dbClient.end();
       return response.status(200).json(migrations_get);
 
