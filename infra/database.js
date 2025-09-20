@@ -19,7 +19,6 @@ async function getNewClient() {
     host: process.env.POSTGRES_HOST,
     user: process.env.POSTGRES_USER,
     database: process.env.POSTGRES_DB,
-    user: process.env.POSTGRES_USER,
     password: process.env.POSTGRES_PASSWORD,
     ssl: process.env.NODE_ENV === "production" ? true : false,
   });
@@ -28,7 +27,9 @@ async function getNewClient() {
   return client;
 }
 
-export default {
+const database = {
   query,
   getNewClient,
 };
+
+export default database;
