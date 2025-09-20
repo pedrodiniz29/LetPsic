@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from "./Header.module.css";
-
 export default function Header(props) {
   return (
     <div className={styles.header}>
@@ -7,7 +7,7 @@ export default function Header(props) {
         src={
           "https://psicologaleticiapratesnovak.my.canva.site/portifolio/_assets/media/9354c2dbbfe0b412b21771d87098c7a8.png"
         }
-        alt="Tereos"
+        alt="Logo"
       />
       <h1>{props.title}</h1>
       <h2></h2>
