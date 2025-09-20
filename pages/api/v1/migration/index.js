@@ -19,22 +19,23 @@ export default async function migration(request, response) {
     const method = request.method;
 
     console.log(method);
+    let migrations;
     switch (method) {
       case "POST":
         console.log("Entrou no POST");
-        const migrations_post = await migrationRunner({
+        migrations = await migrationRunner({
           ...migrationsObject,
           dryRun: false,
         });
-        if (migrations_post.length > 0) {
-          return response.status(201).json(migrations_post);
+        if (migrations.length > 0) {
+          return response.status(201).json(migrations);
         }
-        return response.status(200).json(migrations_post);
+        return response.status(200).json(migrations);
 
       case "GET":
         console.log("Entrou no GET");
-        const migrations_get = await migrationRunner(migrationsObject);
-        return response.status(200).json(migrations_get);
+        migrations = await migrationRunner(migrationsObject);
+        return response.status(200).json(migrations);
 
       default:
         console.log("Entrou no DEFAULT");
